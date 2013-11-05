@@ -10,12 +10,13 @@ public class Test {
       IllegalAccessException {
     long t1 = System.currentTimeMillis();
     
-    PSO pso = new PSO(-10, 10, 2, 20, 200);
+    PSO pso = new PSO(-10, 10, 10, 20, 200);
     Quantum optimal = pso.optimize(new Functions.Beale());
     
     long t2 = System.currentTimeMillis();
     
-    System.out.println(((FloatCalculable)optimal.getFitness()).get());
+    System.out.println("Gbest: " + 
+        ((FloatCalculable) optimal.getFitness()).get() + "\nPositions:");
     for (int i = 0; i < optimal.getPosition().length; ++i) 
       System.out.println(optimal.getPosition()[i]);
     System.out.println("Time used " + (t2 - t1) + " ms.");

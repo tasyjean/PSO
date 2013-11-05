@@ -5,6 +5,7 @@ package pso.type;
  * interface to make it calculated and compared.
  */
 public interface Calculable {
+  
   /** Copy from another Calculable. */
   public abstract void copyFrom(Calculable c);
   

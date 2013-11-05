@@ -8,7 +8,7 @@ public class IntCalculable implements Calculable {
   
   public IntCalculable() {}
   
-  public IntCalculable(int value) { set(value); }
+  public IntCalculable(int value) { this.value = value; }
   
   public void copyFrom(Calculable c) { value = ((IntCalculable) c).value; }
   
@@ -22,7 +22,7 @@ public class IntCalculable implements Calculable {
   public boolean equals(Object o) {
     if (!(o instanceof IntCalculable))
       return false;
-    IntCalculable other = (IntCalculable)o;
+    IntCalculable other = (IntCalculable) o;
     return (this.value == other.value);
   }
   
@@ -36,26 +36,26 @@ public class IntCalculable implements Calculable {
   
   @Override
   public Calculable add(Calculable c) {
-    int sum = this.value + ((IntCalculable)c).value;
+    int sum = this.value + ((IntCalculable) c).value;
     return (new IntCalculable(sum));
   }
 
   @Override
   public Calculable subtract(Calculable c) {
-    this.value -= ((IntCalculable)c).value;
+    this.value -= ((IntCalculable) c).value;
     return this;
   }
 
   @Override
   public Calculable multiply(Calculable c) {
-    int product = this.value * ((IntCalculable)c).value;
+    int product = this.value * ((IntCalculable) c).value;
     return (new IntCalculable(product));
   }
 
   @Override
   public int compareTo(Calculable c) {
     int thisValue = this.value;
-    int thatValue = ((IntCalculable)c).value;
+    int thatValue = ((IntCalculable) c).value;
     return (thisValue < thatValue ? -1 : (thisValue == thatValue ? 0 : 1));
   }
 

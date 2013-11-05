@@ -7,7 +7,7 @@ public class FloatCalculable implements Calculable {
   
   public FloatCalculable() {}
   
-  public FloatCalculable(float value) { set(value); }
+  public FloatCalculable(float value) { this.value = value; }
   
   /** Set the value of this FloatCalculable. */
   public void set(float value) { this.value = value; }
@@ -19,7 +19,7 @@ public class FloatCalculable implements Calculable {
   public boolean equals(Object o) {
     if (!(o instanceof FloatCalculable))
       return false;
-    FloatCalculable other = (FloatCalculable)o;
+    FloatCalculable other = (FloatCalculable) o;
     return (this.value == other.value);
   }
   
@@ -38,26 +38,26 @@ public class FloatCalculable implements Calculable {
   
   @Override
   public Calculable add(Calculable c) {
-    float sum = this.value + ((FloatCalculable)c).value;
+    float sum = this.value + ((FloatCalculable) c).value;
     return (new FloatCalculable(sum));
   }
 
   @Override
   public Calculable subtract(Calculable c) {
-    float diff = this.value - ((FloatCalculable)c).value;
+    float diff = this.value - ((FloatCalculable) c).value;
     return (new FloatCalculable(diff));
   }
 
   @Override
   public Calculable multiply(Calculable c) {
-    float product = this.value * ((FloatCalculable)c).value;
+    float product = this.value * ((FloatCalculable) c).value;
     return (new FloatCalculable(product));
   }
 
   @Override
   public int compareTo(Calculable c) {
     float thisValue = this.value;
-    float thatValue = ((FloatCalculable)c).value;
+    float thatValue = ((FloatCalculable) c).value;
     return (thisValue < thatValue ? -1 : (thisValue == thatValue ? 0 : 1));
   }
 
