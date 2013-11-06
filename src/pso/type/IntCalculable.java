@@ -2,7 +2,6 @@ package pso.type;
 
 /** A Calculable for integers. */
 public class IntCalculable implements Calculable {
-  public static final int MIN_VALUE = Integer.MIN_VALUE;
   
   private int value;
   

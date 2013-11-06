@@ -2,7 +2,6 @@ package pso.type;
 
 /** A Calculable for long. */
 public class LongCalculable implements Calculable {
-  public static final long MIN_VALUE = Long.MIN_VALUE;
   
   private long value;
   
